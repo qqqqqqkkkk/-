@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🐧🐧商城欢迎您！</title>
+    <style>
+        button{
+            display: inline-block;
+            height: 100px;
+            width:100px;
+            margin-top: 17%;
+            margin-left: 19%;
+            -moz-border-radius: 50px;
+             -webkit-border-radius: 50px;
+             border-radius: 50px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id = "index">
+        <button id="user" onclick="user()">我是用户</button>
+        <button id="seller" onclick="seller()">我是卖家</button>
+        <button id="admin" onclick="admin()">我是管理员</button>
+    </div>
+
+    <script>
+        user = function(){
+            window.location.href = "http://localhost:8080/user";
+        }
+        admin = function(){
+            window.location.href = "http://localhost:8080/admin";
+        }
+        seller = function(){
+            window.location.href = "http://localhost:8080/seller";
+        }
+
+    </script>
+</body>
+</html>

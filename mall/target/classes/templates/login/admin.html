@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎登录管理员系统</title>
+<!--    引入Vue和Axios-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id = "information">
+        <input v-model = "name" placeholder="请输入你的用户名"><br/>
+        <input v-model = "password" placeholder="请输入你的密码"><br/>
+        <button @click = "submit()">提交</button>
+    </div>
+
+
+    <script>
+        const a = 1;
+       const vm = new Vue({
+            el:"#information",
+            data:{
+                    name:"",
+                    password:""
+            },
+            methods:{
+                submit(){
+                    axios.get("http://localhost:8080/adminIsExist/"+this.name+"/"+this.password).then((res)=>{
+                        alert(res.data);
+                    })
+                }
+            },
+            watch:{
+                name(val){
+                    console.log(val);
+                }
+            }
+        })
+    </script>
+</body>
+</html>
